@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 const Hero = ({variant = '', titleText, imageSrc, ...otherProps}) => (
   <div {...otherProps} className={styles.component + variant.split(' ').map(name => ' ' + (styles[name] || name)).join('')}>
     <h2 className={styles.title}>{titleText}</h2>
+    {/* eslint-disable-next-line  */}
     <img className={styles.image} alt="hero-image" src={imageSrc} />
   </div>
 );
