@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {BrowserRouter, Route} from 'react-router-dom';
 import PropTypes from 'prop-types';
-import styles from './App.scss'
+import styles from './App.module.scss'
 import MainLayout from './components/layout/MainLayout/MainLayout';
 import {AnimatedSwitch} from 'react-router-transition';
 import Home from './components/views/Home/Home';
@@ -48,7 +48,6 @@ class App extends React.Component {
       atActive={{ opacity: 1 }}
       className={styles.switchWrapper}
     >
-          
             <Route exact path='/' component={Home} />
             <Route exact path='/trips' component={Trips} />
             <Route exact path='/regions' component={Regions} />
