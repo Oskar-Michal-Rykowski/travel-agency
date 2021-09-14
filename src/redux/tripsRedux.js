@@ -12,8 +12,21 @@ export const getFilteredTrips = ({trips, filters}) => {
   }
 
   // TODO - filter by duration
-
+  // if(){
+  //   output = output.filter(trip => 
+  //     //większe od 
+  //     &&
+  //     //mniejsze od
+  //     );
+  // }
   // TODO - filter by tags
+if(filters.tags.length){
+  output = output.filter(trip => trip.tags.some(item => (filters.tags.includes(item))));
+}
+
+// function findCommonElements3(arr1, arr2) {
+//   return arr1.some(item => arr2.includes(item))
+// }
 
   // TODO - sort by cost descending (most expensive goes first)
 
