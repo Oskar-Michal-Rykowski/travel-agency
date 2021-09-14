@@ -12,13 +12,13 @@ export const getFilteredTrips = ({trips, filters}) => {
   }
 
   // TODO - filter by duration
-  // if(){
-  //   output = output.filter(trip => 
-  //     //większe od 
-  //     &&
-  //     //mniejsze od
-  //     );
-  // }
+  if(filters.duration){
+    output = output.filter(trip => 
+      trip.days > filters.duration.from
+      &&
+      trip.days < filters.duration.to
+      );
+    }
   // TODO - filter by tags
 if(filters.tags.length){
   output = output.filter(trip => trip.tags.some(item => (filters.tags.includes(item))));
