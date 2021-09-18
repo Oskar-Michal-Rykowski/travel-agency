@@ -4,18 +4,15 @@ import styles from './OrderSummary.module.scss';
 import { calculateTotal } from '../../../utils/calculateTotal';
 import { formatPrice } from '../../../utils/formatPrice';
 
-export const OrderSummary = (props) => {
+export const OrderSummary = ({ tripCost, options }) => {
   return (
     <h2 className={styles.component}>
-      Total:{' '}
-      <strong>
-        {formatPrice(calculateTotal(props.tripCost, props.options))}
-      </strong>
+      Total: <strong>{calculateTotal(formatPrice(tripCost), options)}</strong>
     </h2>
   );
 };
 
 OrderSummary.propTypes = {
   tripCost: PropTypes.string,
-  options: PropTypes.node,
+  options: PropTypes.object,
 };

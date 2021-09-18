@@ -1,17 +1,14 @@
 import { connect } from 'react-redux';
-import { getOrderOptions } from '../../../redux/orderRedux';
+import { getOrderOptions, setOrderOption } from '../../../redux/orderRedux';
 import OrderForm from './OrderForm';
 
 const mapStateToProps = (state) => ({
   options: getOrderOptions(state),
+  setOrderOption: setOrderOption,
 });
 
-// const mapDispatchToProps = dispatch => ({
-//   changeSearchPhrase: phrase => dispatch(changeSearchPhrase(phrase)),
-//   // TODO - add more dispatchers for other filters
-//   addTag: tag => dispatch(addTag(tag)),
-//   deleteTag: tag => dispatch(deleteTag(tag)),
-//   changeSearchDuration: (type, value) => dispatch(changeSearchDuration({type, value})),
-// });
+const mapDispatchToProps = (dispatch) => ({
+  setOrderOption: (option) => dispatch(setOrderOption(option)),
+});
 
-export default connect(mapStateToProps)(OrderForm);
+export default connect(mapStateToProps, mapDispatchToProps)(OrderForm);

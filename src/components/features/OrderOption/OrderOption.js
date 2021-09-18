@@ -27,5 +27,5 @@ export const OrderOption = ({ name, type, ...otherProps }) => {
 };
 
 OrderOption.propTypes = {
-  namet: PropTypes.string,
+  name: PropTypes.string,
 };
