@@ -1,12 +1,10 @@
 import PropTypes from 'prop-types';
-
 import { Row, Col } from 'react-flexbox-grid';
+
 import { OrderSummary } from '../OrderSummary/OrderSummary';
 import { OrderOption } from '../OrderOption/OrderOption';
 import pricing from '../../../data/pricing.json';
-// {/* Iterujemy po bazie danych "pricing". Option to jeden element
-//       w pricing. Potem rozkładamy elemnty każdej Option na propsy.
-//       W currentValue przekazujemy to samo co w kluczu? Po co? */}
+
 const OrderForm = ({ tripCost, options, setOrderOption }) => {
   return (
     <Row>

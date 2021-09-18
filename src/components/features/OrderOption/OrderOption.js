@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+
 import styles from './OrderOption.module.scss';
 import { OrderOptionDropdown } from './OrderOptionDropdown';
 import { OrderOptionIcons } from './OrderOptionIcons';

@@ -1,6 +1,5 @@
 import { formatPrice } from '../../../utils/formatPrice';
 import styles from './OrderOption.module.scss';
-// import Icon from '../../common/Icon/Icon';
 
 const newValueSet = (currentValue, id, checked) => {
   if (checked) {
