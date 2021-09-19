@@ -10,7 +10,7 @@ export const OrderOptionNumber = ({ currentValue, limits, setOptionValue }) => (
       min={limits.min}
       max={limits.max}
       onChange={(event) => setOptionValue(event.currentTarget.value)}
-      readonly
+      readOnly
     ></input>
   </div>
 );
