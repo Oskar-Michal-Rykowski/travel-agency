@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { BrowserRouter, Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
+
 import styles from './App.module.scss';
 import MainLayout from './components/layout/MainLayout/MainLayout';
 import { AnimatedSwitch } from 'react-router-transition';
