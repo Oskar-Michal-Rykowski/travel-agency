@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { Row, Col } from 'react-flexbox-grid';
+import React from 'react';
 
 import { OrderSummary } from '../OrderSummary/OrderSummary';
 import { OrderOption } from '../OrderOption/OrderOption';

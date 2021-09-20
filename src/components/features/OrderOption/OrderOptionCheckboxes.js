@@ -1,3 +1,6 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+
 import { formatPrice } from '../../../utils/formatPrice';
 import styles from './OrderOption.module.scss';
 
@@ -32,3 +35,9 @@ export const OrderOptionCheckboxes = ({
     ))}
   </div>
 );
+
+OrderOptionCheckboxes.propTypes = {
+  values: PropTypes.string,
+  currentValue: PropTypes.string,
+  setOptionValue: PropTypes.string,
+};
