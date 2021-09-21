@@ -8,7 +8,7 @@ import PageTitle from '../../common/PageTitle/PageTitle';
 import {Grid, Row, Col} from 'react-flexbox-grid';
 import TripListOptions from '../../features/TripListOptions/TripListOptionsContainer';
 
-const Trips = ({trips}) => (
+const Trips = ({trips, setTrip }) => (
   <Section>
     <Grid>
       <Row>
@@ -17,7 +17,7 @@ const Trips = ({trips}) => (
           <TripListOptions />
           <Row>
             {trips.length ? trips.map(trip => (
-              <TripSummary key={trip.id} {...trip} />
+              <TripSummary key={trip.id}  setTrip={trip.id => setTrip(trip.id)} {...trip}/>
             )) : (
               <p>Sorry, no results found. Try adjusting the filters.</p>
             )}
