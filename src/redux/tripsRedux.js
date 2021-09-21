@@ -25,6 +25,10 @@ export const getFilteredTrips = ({ trips, filters }) => {
     );
   }
 
+  // function findCommonElements3(arr1, arr2) {
+  //   return arr1.some(item => arr2.includes(item))
+  // }
+
   // TODO - sort by cost descending (most expensive goes first)
 
   return output;
@@ -50,25 +54,22 @@ export const getTripsForCountry = ({ trips }, countryCode) => {
 
 /* ACTIONS */
 
+/*
 // action name creator
 const reducerName = 'trips';
-const createActionName = (name) => `app/${reducerName}/${name}`;
+const createActionName = name => `app/${reducerName}/${name}`;
 
 // action types
-export const SET_TRIP = createActionName('SET_TRIP');
+
 
 // action creators
-export const setTrip = (payload) => ({ payload, type: SET_TRIP });
+
 
 // reducer
 export default function reducer(statePart = [], action = {}) {
   switch (action.type) {
-    case SET_TRIP:
-      return {
-        ...statePart,
-        trip: action.payload,
-      };
     default:
       return statePart;
   }
 }
+ */
