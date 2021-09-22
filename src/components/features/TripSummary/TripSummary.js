@@ -5,9 +5,13 @@ import { Link } from 'react-router-dom';
 
 import styles from './TripSummary.module.scss';
 
-const TripSummary = ({ id, image, name, cost, days, tags }) => (
+const TripSummary = ({ id, image, name, cost, days, tags, setTrip }) => (
   <Col xs={12} sm={6} lg={4} className={styles.column}>
-    <Link to={`/trip/${id}`} className={styles.link}>
+    <Link
+      to={`/trip/${id}`}
+      className={styles.link}
+      onClick={() => setTrip(id)}
+    >
       <article className={styles.component}>
         <img src={image} alt={name} />
         <h3 className={styles.title}>{name}</h3>
@@ -35,6 +39,7 @@ TripSummary.propTypes = {
   cost: PropTypes.string,
   days: PropTypes.number,
   tags: PropTypes.array.isRequired,
+  setTrip: PropTypes.func,
 };
 
 export default TripSummary;
