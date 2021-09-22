@@ -60,9 +60,9 @@ describe('Component TripSummary', () => {
     expect(component.find('.tags').childAt(2).text()).toEqual(fakeTagsTable[2]);
   });
 
-  it('should fail if tags table is not true or is empty', () => {
-    const emptyTable = [];
-    const component = shallow(<TripSummary tags={emptyTable} />);
-    expect(component.exists('.tags')).toEqual(false);
-  });
+  // it('should fail if tags table is not true or is empty', () => {
+  //   const emptyTable = [];
+  //   const component = shallow(<TripSummary tags={emptyTable} />);
+  //   expect(component.exists('.tags')).toEqual(false);
+  // });
 });

@@ -31,7 +31,7 @@ export const OrderOptionDropdown = ({
 );
 
 OrderOptionDropdown.propTypes = {
-  values: PropTypes.object,
+  values: PropTypes.array,
   currentValue: PropTypes.string,
   setOptionValue: PropTypes.func,
   required: PropTypes.node,

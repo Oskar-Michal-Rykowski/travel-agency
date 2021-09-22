@@ -37,8 +37,8 @@ export const OrderOptionIcons = ({
 );
 
 OrderOptionIcons.propTypes = {
-  values: PropTypes.object,
+  values: PropTypes.array,
   currentValue: PropTypes.string,
   setOptionValue: PropTypes.func,
-  required: PropTypes.node,
+  required: PropTypes.bool,
 };
