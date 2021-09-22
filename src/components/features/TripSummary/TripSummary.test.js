@@ -40,6 +40,12 @@ describe('Component TripSummary', () => {
       />
     );
     expect(component.find('.title').text()).toEqual(tripName);
+    expect(component.find('.details').childAt(0).text()).toEqual(
+      `${tripDays} days`
+    );
+    expect(component.find('.details').childAt(1).text()).toEqual(
+      `from ${tripCost}`
+    );
   });
 
   it('should throw error without required props', () => {
