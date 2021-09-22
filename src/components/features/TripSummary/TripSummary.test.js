@@ -51,4 +51,18 @@ describe('Component TripSummary', () => {
   it('should throw error without required props', () => {
     expect(() => shallow(<TripSummary />)).toThrow();
   });
+
+  it('should render span for each tag', () => {
+    const component = shallow(<TripSummary tags={fakeTagsTable} />);
+
+    expect(component.find('.tags').childAt(0).text()).toEqual(fakeTagsTable[0]);
+    expect(component.find('.tags').childAt(1).text()).toEqual(fakeTagsTable[1]);
+    expect(component.find('.tags').childAt(2).text()).toEqual(fakeTagsTable[2]);
+  });
+
+  it('should fail if tags table is not true or is empty', () => {
+    const emptyTable = [];
+    const component = shallow(<TripSummary tags={emptyTable} />);
+    expect(component.exists('.tags')).toEqual(false);
+  });
 });
