@@ -16,7 +16,6 @@ const sendOrder = (options, tripCost, tripName, countryCode) => {
   const path = window.location.href;
   const str = path.split('/');
   const tripId = str[str.length - 1];
-  console.log('countryCode', countryCode);
 
   const payload = {
     ...options,
