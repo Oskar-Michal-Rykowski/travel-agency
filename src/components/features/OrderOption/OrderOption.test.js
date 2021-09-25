@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { OrderOption } from './OrderOption';
-// import DatePicker from 'react-datepicker';
+import DatePicker from 'react-datepicker';
 
 describe('Component OrderOption', () => {
   const testType = 'number';
@@ -230,13 +230,14 @@ for (let type in optionTypes) {
         });
 
         /// Nie mam pojęcia jak mam ten DatePicker importować a potem zasymulować event bez renderowania.
-        // it('should run setOrderOption function on change', () => {
-        //   DatePicker.simulate('change', testValue);
-        //   expect(mockSetOrderOption).toBeCalledTimes(1);
-        //   expect(mockSetOrderOption).toBeCalledWith({
-        //     [mockProps.id]: testValue,
-        //   });
-        // });
+        it('should run setOrderOption function on change', () => {
+          const element = renderedSubcomponent.find(DatePicker);
+          element.simulate('change', testValue);
+          expect(mockSetOrderOption).toBeCalledTimes(1);
+          expect(mockSetOrderOption).toBeCalledWith({
+            [mockProps.id]: testValue,
+          });
+        });
         break;
       }
     }
