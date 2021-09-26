@@ -2,6 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 class HappyHourAd extends React.Component {
+  constructor() {
+    super();
+
+    /* run this.forceUpdate() every second */
+    // nie jestem pewien czy tu dobrze zrobiłem
+    setInterval(() => this.forceUpdate, 1000);
+  }
+
   static propTypes = {
     title: PropTypes.string,
     promoDescription: PropTypes.string,
