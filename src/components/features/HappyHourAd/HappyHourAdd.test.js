@@ -4,7 +4,7 @@ import HappyHourAd from './HappyHourAd';
 
 const mockProps = {
   title: 'Test title',
-  promoDescription: 'Something Lorem Ipsum',
+  promoDescription: 'Your time is now! Until 12:59 you can buy with discounts!',
 };
 
 const select = {
@@ -96,4 +96,10 @@ describe('Component HappyHourAd with mocked Date and delay', () => {
   checkDescriptionAfterTime('11:57:58', 4, '122');
   checkDescriptionAfterTime('11:59:59', 8, '1');
   checkDescriptionAfterTime('13:00:00', 60 * 60, 23 * 60 * 60 + '');
+});
+
+describe('Component HappyHourAd with mocked Date should show text between 12:00 and 12:59:59', () => {
+  checkDescriptionAtTime('12:00:00', mockProps.promoDescription);
+  checkDescriptionAtTime('12:59:59', mockProps.promoDescription);
+  checkDescriptionAtTime('12:30:00', mockProps.promoDescription);
 });

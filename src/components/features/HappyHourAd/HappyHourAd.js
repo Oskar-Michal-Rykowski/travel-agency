@@ -49,10 +49,21 @@ class HappyHourAd extends React.Component {
 
   render() {
     const { title } = this.props;
+
+    const clock = this.getCountdownTime();
+    const slogan = 'Your time is now! Until 12:59 you can buy with discounts!';
+    let textInDescription = '';
+
+    if (clock > 23 * 60 * 60) {
+      textInDescription = slogan;
+    } else {
+      textInDescription = clock;
+    }
+
     return (
       <div>
         <h3 className="title">{title}</h3>
-        <div className="promoDescription">{this.getCountdownTime()}</div>
+        <div className="promoDescription">{textInDescription}</div>
       </div>
     );
   }
