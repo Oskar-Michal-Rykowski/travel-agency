@@ -20,7 +20,10 @@ const Hero = ({ variant = '', titleText, imageSrc, ...otherProps }) => (
     {/* eslint-disable-next-line  */}
     <img className={styles.image} alt="hero-image" src={imageSrc} />
     <div className={styles.happyHour}>
-      <HappyHourAd title="Happy Hour" />
+      <HappyHourAd
+        title="Happy Hour"
+        promoDescription="Your time is now! Until 12:59 you can buy with discounts!"
+      />
     </div>
   </div>
 );

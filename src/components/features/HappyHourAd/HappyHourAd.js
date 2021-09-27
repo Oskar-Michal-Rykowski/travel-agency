@@ -12,7 +12,7 @@ class HappyHourAd extends React.Component {
 
   static propTypes = {
     title: PropTypes.string,
-    // promoDescription: PropTypes.string,
+    promoDescription: PropTypes.string,
   };
 
   getCountdownTime() {
@@ -37,14 +37,14 @@ class HappyHourAd extends React.Component {
   }
 
   render() {
-    const { title } = this.props;
+    const { title, promoDescription } = this.props;
 
     const clock = this.getCountdownTime();
-    const slogan = 'Your time is now! Until 12:59 you can buy with discounts!';
+    // const slogan = 'Your time is now! Until 12:59 you can buy with discounts!';
     let textInDescription = '';
 
     if (clock > 23 * 60 * 60) {
-      textInDescription = slogan;
+      textInDescription = promoDescription;
     } else {
       textInDescription = clock;
     }

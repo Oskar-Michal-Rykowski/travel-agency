@@ -4,7 +4,7 @@ import HappyHourAd from './HappyHourAd';
 
 const mockProps = {
   title: 'Test title',
-  promoDescription: 'Your time is now! Until 12:59 you can buy with discounts!',
+  promoDescription: 'Foo description',
 };
 
 const select = {
