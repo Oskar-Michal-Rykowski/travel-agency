@@ -7,26 +7,13 @@ class HappyHourAd extends React.Component {
   constructor() {
     super();
 
-    /* run this.forceUpdate() every second */
-    // nie jestem pewien czy tu dobrze zrobiłem
-    setInterval(() => this.forceUpdate, 1000);
+    setInterval(() => this.forceUpdate(), 1000);
   }
 
   static propTypes = {
     title: PropTypes.string,
-    promoDescription: PropTypes.string,
+    // promoDescription: PropTypes.string,
   };
-
-  // state = {
-  //   startDate: new Date(),
-  // };
-
-  // handleChange = (date) => {
-  //   this.setState({
-  //     startDate: date,
-  //   });
-  //   this.props.setOptionValue(date);
-  // };
 
   getCountdownTime() {
     const currentTime = new Date();
