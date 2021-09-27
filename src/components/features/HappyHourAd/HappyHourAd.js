@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import styles from './HappyHourAd.scss';
+import { formatTime } from '../../../utils/formatTime';
 
 class HappyHourAd extends React.Component {
   constructor() {
@@ -46,7 +47,7 @@ class HappyHourAd extends React.Component {
     if (clock > 23 * 60 * 60) {
       textInDescription = promoDescription;
     } else {
-      textInDescription = clock;
+      textInDescription = formatTime(clock);
     }
 
     return (

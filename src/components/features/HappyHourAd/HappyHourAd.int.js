@@ -12,36 +12,6 @@ const select = {
   promoDescription: '.promoDescription',
 };
 
-beforeAll(() => {
-  const utilsModule = jest.requireActual('../../../utils/formatTime.js');
-  utilsModule.formatTime = jest.fn((seconds) => seconds);
-});
-
-describe('Component HappyHourAd', () => {
-  it('should render without crashing', () => {
-    const component = shallow(<HappyHourAd />);
-    expect(component).toBeTruthy();
-  });
-  it('should render h3 with class title', () => {
-    const component = shallow(<HappyHourAd />);
-    expect(component.exists(select.title)).toEqual(true);
-  });
-  it('should render div with class promoDescription', () => {
-    const component = shallow(<HappyHourAd />);
-    expect(component.exists(select.promoDescription)).toEqual(true);
-  });
-  it('should have title from props title', () => {
-    const component = shallow(<HappyHourAd {...mockProps} />);
-    expect(component.find(select.title).text()).toEqual(mockProps.title);
-  });
-  //   it('should have title from props promoDescription', () => {
-  //     const component = shallow(<HappyHourAd {...mockProps} />);
-  //     expect(component.find(select.promoDescription).text()).toEqual(
-  //       mockProps.promoDescription
-  //     );
-  //   });
-});
-
 const trueDate = Date;
 const mockDate = (customDate) =>
   class extends Date {
@@ -100,14 +70,4 @@ describe('Component HappyHourAd with mocked Date and delay', () => {
   checkDescriptionAfterTime('11:57:58', 2, '120');
   checkDescriptionAfterTime('11:59:58', 1, '1');
   checkDescriptionAfterTime('13:00:00', 60 * 60, 22 * 60 * 60 + '');
-});
-
-describe('Component HappyHourAd with mocked Date should show text between 12:00 and 12:59:59', () => {
-  checkDescriptionAtTime('12:00:00', mockProps.promoDescription);
-  checkDescriptionAtTime('12:59:59', mockProps.promoDescription);
-  checkDescriptionAtTime('12:30:00', mockProps.promoDescription);
-});
-
-describe('Component HappyHourAd before and after 12:00', () => {
-  checkDescriptionAfterTime('11:55:59', 3600, mockProps.promoDescription);
 });
