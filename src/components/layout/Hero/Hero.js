@@ -1,6 +1,8 @@
 import React from 'react';
-import styles from './Hero.module.scss';
 import PropTypes from 'prop-types';
+
+import HappyHourAd from '../../features/HappyHourAd/HappyHourAd';
+import styles from './Hero.module.scss';
 
 const Hero = ({ variant = '', titleText, imageSrc, ...otherProps }) => (
   <div
@@ -14,8 +16,12 @@ const Hero = ({ variant = '', titleText, imageSrc, ...otherProps }) => (
     }
   >
     <h2 className={styles.title}>{titleText}</h2>
+
     {/* eslint-disable-next-line  */}
     <img className={styles.image} alt="hero-image" src={imageSrc} />
+    <div className={styles.happyHour}>
+      <HappyHourAd />
+    </div>
   </div>
 );
 
