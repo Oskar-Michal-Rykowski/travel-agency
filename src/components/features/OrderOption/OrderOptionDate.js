@@ -1,37 +1,59 @@
-// import styles from './OrderOption.module.scss';
-// import PropTypes from 'prop-types';
-
-// export const OrderOptionDate = () => <div>OrderOptionDate</div>;
-
-// OrderOptionText.propTypes = {
-//   id: PropTypes.string,
-//   type: PropTypes.string,
-// };
-
-import React, { useState, useEffect } from 'react';
-import DatePicker from 'react-datepicker';
+import React from 'react';
 import PropTypes from 'prop-types';
-
 import 'react-datepicker/dist/react-datepicker.css';
-// import { OrderOption } from './OrderOption';
 
-const OrderOptionDate = ({ setOptionValue }) => {
-  const [startDate, setStartDate] = useState(new Date());
+import DatePicker from 'react-datepicker';
 
-  useEffect(() => {
-    setOptionValue(startDate);
-  }, []);
-
-  const handleChange = (date) => {
-    setStartDate(date);
-    setOptionValue(date);
+class OrderOptionDate extends React.Component {
+  static propTypes = {
+    setOptionValue: PropTypes.func,
   };
 
-  return <DatePicker selected={startDate} onChange={handleChange} />;
-};
+  state = {
+    startDate: new Date(),
+  };
 
-OrderOptionDate.propTypes = {
-  setOptionValue: PropTypes.func,
-};
+  handleChange = (date) => {
+    this.setState({
+      startDate: date,
+    });
+    this.props.setOptionValue(date);
+  };
+
+  render() {
+    return (
+      <DatePicker
+        selected={this.state.startDate}
+        onChange={this.handleChange}
+      />
+    );
+  }
+}
 
 export default OrderOptionDate;
+
+// import React, { useState, useEffect } from 'react';
+// import DatePicker from 'react-datepicker';
+// import PropTypes from 'prop-types';
+
+// import 'react-datepicker/dist/react-datepicker.css';
+
+// const OrderOptionDate = ({ setOptionValue }) => {
+//   const [startDate, setStartDate] = useState(new Date());
+
+//   useEffect(() => {
+//     setOptionValue(startDate);
+//   }, [startDate]);
+
+//   const handleChange = (date) => {
+//     setStartDate(date);
+//   };
+
+//   return <DatePicker selected={startDate} onChange={handleChange} />;
+// };
+
+// OrderOptionDate.propTypes = {
+//   setOptionValue: PropTypes.func,
+// };
+
+// export default OrderOptionDate;

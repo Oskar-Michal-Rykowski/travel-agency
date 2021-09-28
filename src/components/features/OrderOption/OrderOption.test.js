@@ -223,11 +223,9 @@ for (let type in optionTypes) {
       case 'date': {
         it('contains component DataPicker', () => {
           const element = renderedSubcomponent.find(DatePicker);
-          //tutaj też jest coś nie tak. Nizależnie czy wyszuuję DatePicker czy nawet "blablalba" warunek poniżej jest prawdziwy...
           expect(element.length).toBe(1);
         });
 
-        /// Nie mam pojęcia jak mam ten DatePicker importować a potem zasymulować event bez renderowania.
         it('should run setOrderOption function on change', () => {
           const element = renderedSubcomponent.find(DatePicker);
           element.simulate('change', testValue);
