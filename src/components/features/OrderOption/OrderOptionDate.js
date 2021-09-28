@@ -8,37 +8,30 @@
 //   type: PropTypes.string,
 // };
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import DatePicker from 'react-datepicker';
 import PropTypes from 'prop-types';
 
 import 'react-datepicker/dist/react-datepicker.css';
 // import { OrderOption } from './OrderOption';
 
-class OrderOptionDate extends React.Component {
-  static propTypes = {
-    setOptionValue: PropTypes.func,
+const OrderOptionDate = ({ setOptionValue }) => {
+  const [startDate, setStartDate] = useState(new Date());
+
+  useEffect(() => {
+    setOptionValue(startDate);
+  }, []);
+
+  const handleChange = (date) => {
+    setStartDate(date);
+    setOptionValue(date);
   };
 
-  state = {
-    startDate: new Date(),
-  };
+  return <DatePicker selected={startDate} onChange={handleChange} />;
+};
 
-  handleChange = (date) => {
-    this.setState({
-      startDate: date,
-    });
-    this.props.setOptionValue(date);
-  };
-
-  render() {
-    return (
-      <DatePicker
-        selected={this.state.startDate}
-        onChange={this.handleChange}
-      />
-    );
-  }
-}
+OrderOptionDate.propTypes = {
+  setOptionValue: PropTypes.func,
+};
 
 export default OrderOptionDate;

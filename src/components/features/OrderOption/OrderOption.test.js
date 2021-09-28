@@ -150,8 +150,6 @@ for (let type in optionTypes) {
         it('contains input with correct props', () => {
           const input = renderedSubcomponent.find('input');
           expect(input.length).toBe(1);
-          //coś jest poniżej nie tak... czy musimy testować id? W inspektorze nie widać go jako propsa OrderOptiotText.
-          // expect(input.prop('id')).toBe(mockProps.id);
           expect(input.hasClass('input')).toBe(true);
         });
 
@@ -172,7 +170,7 @@ for (let type in optionTypes) {
       case 'icons': {
         it('contains input with correct props', () => {
           const element = renderedSubcomponent.find('div .icon');
-          expect(element).toBeTruthy();
+          expect(element.length).toBe(2);
           expect(element.find('Icon').at(0).prop('name')).toBe(
             mockProps.values[0].icon
           );
@@ -224,9 +222,9 @@ for (let type in optionTypes) {
 
       case 'date': {
         it('contains component DataPicker', () => {
-          const element = renderedSubcomponent.find('DatePicker');
+          const element = renderedSubcomponent.find(DatePicker);
           //tutaj też jest coś nie tak. Nizależnie czy wyszuuję DatePicker czy nawet "blablalba" warunek poniżej jest prawdziwy...
-          expect(element).toBeTruthy();
+          expect(element.length).toBe(1);
         });
 
         /// Nie mam pojęcia jak mam ten DatePicker importować a potem zasymulować event bez renderowania.
