@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import HappyHourAd from '../../features/HappyHourAd/HappyHourAd';
+import CountDaysTo from '../../features/CountDaysTo/CountDaysTo';
 import styles from './Hero.module.scss';
 
 const Hero = ({ variant = '', titleText, imageSrc, ...otherProps }) => (
@@ -19,6 +20,15 @@ const Hero = ({ variant = '', titleText, imageSrc, ...otherProps }) => (
 
     {/* eslint-disable-next-line  */}
     <img className={styles.image} alt="hero-image" src={imageSrc} />
+    <div className={styles.countDaysTo}>
+      <CountDaysTo
+        countdownTo="to summer!"
+        monthFrom={5}
+        dayFrom={21}
+        monthTo={8}
+        dayTo={23}
+      />
+    </div>
     <div className={styles.happyHour}>
       <HappyHourAd
         title="Happy Hour"
