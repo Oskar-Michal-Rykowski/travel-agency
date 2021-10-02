@@ -4,6 +4,12 @@ import PropTypes from 'prop-types';
 import styles from './CountDaysTo.scss';
 
 class CountDaysTo extends React.Component {
+  constructor() {
+    super();
+    //pomyśleć nad updatem codzienne o 00:00
+    setInterval(() => this.forceUpdate(), 24 * 60 * 60 * 1000);
+  }
+
   static propTypes = {
     countdownTo: PropTypes.string,
     monthFrom: PropTypes.number,

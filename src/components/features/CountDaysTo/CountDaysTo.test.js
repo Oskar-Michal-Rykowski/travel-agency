@@ -71,6 +71,7 @@ const checkDescriptionAfterTime = (time, delayDays, expectedValue) => {
   it(`should show correct value ${delayDays} days after ${time}`, () => {
     jest.useFakeTimers();
     global.Date = mockDate(`${time}T00:00:01.135Z`);
+    const component = shallow(<CountDaysTo {...mockProps} />);
 
     const newTime = new Date();
     newTime.setSeconds(newTime.getSeconds() + delayDays * 24 * 60 * 60);
@@ -78,7 +79,6 @@ const checkDescriptionAfterTime = (time, delayDays, expectedValue) => {
 
     jest.advanceTimersByTime(delayDays * 24 * 60 * 60 * 1000);
 
-    const component = shallow(<CountDaysTo {...mockProps} />);
     const renderedTime = component.find(select.title).text();
     expect(renderedTime).toEqual(expectedValue);
 
